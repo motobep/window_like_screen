@@ -73,13 +73,19 @@ toggle_show_points_btn.addEventListener('click', function() {
 	} else if (showPoints === ShowPoints.nose) {
 		showPoints = ShowPoints.all
 	}
-	toggle_show_points_btn.innerHTML = 'Show: ' + showPoints
+	toggle_show_points_btn.innerHTML = 'Show Points: ' + showPoints
 });
 
 let isSendPoint = false
 toggle_is_send_point.addEventListener('click', function() {
 	isSendPoint = !isSendPoint
 	toggle_is_send_point.innerHTML = 'Toggle send: ' + isSendPoint
+})
+
+let isDrawCam = true
+toggle_is_draw_cam.addEventListener('click', function() {
+	isDrawCam = !isDrawCam
+	toggle_is_draw_cam.innerHTML = 'Draw cam: ' + isDrawCam
 })
 
 // const borderIndices = [10, 21, 54, 58, 67, 93, 103, 109, 127, 132, 136, 148, 149, 150, 152, 162, 172, 176, 234, 251, 284, 288, 297, 323, 332, 338, 356, 361, 365, 377, 378, 379, 389, 397, 400, 454]
@@ -103,13 +109,15 @@ let ps = []
 function onResults(results) {
     ctx.save();
     ctx.clearRect(0, 0, cam_canvas.width, cam_canvas.height);
-    //drawCam(ctx, results.image)
+    if (isDrawCam) {
+        drawCam(ctx, results.image)
+    }
 
     if (results.multiFaceLandmarks) {
         for (const landmarks of results.multiFaceLandmarks) {
             clearLog()
-            let z_initial = landmarks[1].z
-            logAdd('z tip' + z_initial.toFixed(5))
+            //let z_initial = landmarks[1].z
+            //logAdd('z tip' + z_initial.toFixed(5))
 
             let noseTip = norm({ ...landmarks[1] })
             let leftNose = norm({ ...landmarks[327] })

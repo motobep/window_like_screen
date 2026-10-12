@@ -1,9 +1,11 @@
 /*
 
 !.gitignore
+!README.md
 
 !package.json
 !package-lock.json
+!vite.config.js
 !index.html
 
 !src/
