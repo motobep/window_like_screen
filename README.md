@@ -1,6 +1,6 @@
-## Webpage at
+# window_like_screen
 
-[https://motobep.github.io/window_like_screen/](https://motobep.github.io/window_like_screen/)
+[Web Page](https://motobep.github.io/window_like_screen/)
 
 ### Build
 
@@ -13,3 +13,4 @@ npm run build
 ```bash
 npm run dev
 ```
+
