@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  <style>
+    .hidden {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+    .d-none {
+      display: none;
+    }
+    .flex {
+      display: flex;
+    }
+    .box100 {
+      display: inline-block;
+      width: 100px;
+      height: 5px;
+      background: gray;
+    }
+  </style>
+    <script type="module" crossorigin src="/assets/index-BqsCqGoN.js"></script>
+  </head>
+
+  <body>
+    <button id="start_camera_btn">Start Camera</button>
+    <button id="toggle_show_points_btn">Show Points</button>
+    <button id="toggle_is_send_point">Toggle send: false</button>
+    <div id="coords_el">-</div>
+    <div class="box100"></div>
+    <div class="flex">
+      <canvas id="game"></canvas>
+
+      <video id="video_el" class="d-none"></video>
+      <canvas id="cam_canvas"></canvas>
+    </div>
+
+  </body>
+</html>
