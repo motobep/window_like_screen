@@ -1,0 +1,10 @@
+/*
+
+!.gitignore
+
+!package.json
+!package-lock.json
+!index.html
+
+!src/
+!public/
